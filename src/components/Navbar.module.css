@@ -1,0 +1,18 @@
+.parentList{
+   display: flex; 
+   gap: 50px;
+   width: 50%;
+   height: 50%;
+   justify-content: center;
+   
+   
+
+}
+
+.ParentDiv{
+    border: 1px solid grey;
+}
+
+.Button{
+   
+}
