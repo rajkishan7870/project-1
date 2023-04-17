@@ -1,0 +1,13 @@
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.parentCont{
+    border: 1px solid grey;
+    width : 40%;
+    height: 500px;
+    margin: 1% 30%;
+    background-color: rgb(215, 210, 203);
+}

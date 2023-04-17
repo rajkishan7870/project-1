@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from '../components/button'
-import Navbar from '../components/Navbar'
+import Button from '../../components/button/button'
+import Navbar from '../../components/Navbar'
 
 export default function HomePage() {
   return (

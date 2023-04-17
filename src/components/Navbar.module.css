@@ -4,7 +4,7 @@
    width: 50%;
    height: 50%;
    justify-content: center;
-   
+   background-color: rgb(206, 171, 171);
    
 
 }
@@ -13,6 +13,3 @@
     border: 1px solid grey;
 }
 
-.Button{
-   
-}
