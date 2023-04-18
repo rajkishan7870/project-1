@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Button from './button'
+import Button from './button/button'
 import { useNavigate } from 'react-router-dom'
 import Styles from './Navbar.module.css'
 
@@ -12,6 +12,7 @@ export default function Navbar() {
         { navName: "Home", navpath: "/" },
         { navName: "About", navpath: "/about" },
         { navName: "Login", navpath: "/login" }
+
     ]
 
     function handleNavigate() {
