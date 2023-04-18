@@ -18,19 +18,33 @@ export default function Navbar() {
         navigate('/register')
     }
 
+      
+
+ 
     return (
         <div className={Styles.ParentDiv}>
-            <ul className={Styles.parentList}>
-                {nav.map((element) => {
-                    return (
+              <h1 className={Styles.navbarLogo}>GYM</h1>
+               
+          
+            <div>
 
-                        <li className={Styles.listItems}><Link to={element.navpath}>{element.navName}</Link></li>
-                    )
-                })}
-                <div className={Styles.Button}>
-                    <Button onClick={handleNavigate} data={"Join Us"} />
-                </div>
-            </ul>
+
+                <ul className={Styles.parentList}>
+                    {nav.map((element) => {
+                        return (
+
+                            <li className={Styles.listItems}><Link to={element.navpath}>{element.navName}</Link></li>
+                        )
+                    })}
+
+                </ul>
+
+            </div>
+
+            <div className={Styles.Button}>
+             <button className={Styles.navButton} >Join Us</button>
+            </div>
+            
 
         </div>
     )
