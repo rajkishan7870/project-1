@@ -4,6 +4,7 @@
     height: 600px;
     
     background-image: url("https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +19,7 @@
     border: solid;
     width: 40%;
     margin: 20% 20%;
-    background-color: rgb(184, 184, 136);
+    background-image: linear-gradient(gray 20%, green 30%, red 10%);
 }
 
  form{

@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import Navbar from "../../components/Navbar";
 import Button from "../../components/button/button";
 import { getUsers } from "../../utils/localStorage";
 import styles from "./RegisterPage.module.css";
@@ -34,7 +33,7 @@ export default function RegisterPage() {
   }
   return (
     <div>
-        <Navbar/>
+       
       <div className={styles.parentCont}>
         <div className={styles.registerPage}>
           <div>
