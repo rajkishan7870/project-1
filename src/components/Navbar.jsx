@@ -11,7 +11,9 @@ export default function Navbar() {
     const nav = [
         { navName: "Home", navpath: "/" },
         { navName: "About", navpath: "/about" },
-        { navName: "Login", navpath: "/login" }
+        { navName: "Login", navpath: "/login" },
+        { navName: "Pricing", navpath: "/pricing" }
+
     ]
 
     function handleNavigate() {
