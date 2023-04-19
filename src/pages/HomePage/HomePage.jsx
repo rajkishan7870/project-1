@@ -1,13 +1,13 @@
 import React from 'react'
-import Button from '../../components/button/button'
-import Navbar from '../../components/Navbar'
+import ImgContainer from '../../components/ImgContainer/ImgContainer'
+
+
 
 export default function HomePage() {
   return (
     <div>
-        <Navbar />
-        <h1> Home Page</h1>
-        
+       
+       <ImgContainer/> 
 
     </div>
   )

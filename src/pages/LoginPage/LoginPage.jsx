@@ -1,5 +1,4 @@
 import React,{useState, useRef, useEffect} from 'react'
-import Navbar from '../../components/Navbar'
 import Button from '../../components/button/button'
 import { getUsers } from '../../utils/localStorage';
 import styles from './Login.module.css'
@@ -47,7 +46,7 @@ export default function LoginPage() {
   return (
 
    <div>
-      <Navbar/>
+      
     <div className={styles.parentCont}>
 
       <div className = {styles.login}>
