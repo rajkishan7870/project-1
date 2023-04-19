@@ -18,8 +18,8 @@ const[users,setUsers]=useState([])
     const handlePassword=(e)=>{
       setPassword(e.target.value)
       }
-      const handleSubmit=()=>{
-   
+      const handleSubmit=(event)=>{
+        event.preventDefault();
       const userInfo={
            email:email,
            password:password,
@@ -36,8 +36,10 @@ const[users,setUsers]=useState([])
 
     
         <div className={Styles.mainContainer}>
-          <img className={Styles.logo} src={"https://img.freepik.com/premium-vector/letter-logo-with-barbell-fitness-gym-logo-fitness-vector-logo-design-gym-fitness_227744-337.jpg?w=740"} alt="gym logo" />
+          
           <img className={Styles.backgroundImage} src={"https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt="gym img" />
+          <div className={Styles.box} >
+          <img className={Styles.logo} src={"https://img.freepik.com/premium-vector/letter-logo-with-barbell-fitness-gym-logo-fitness-vector-logo-design-gym-fitness_227744-337.jpg?w=740"} alt="gym logo" />
           <form className={Styles.container}  action ="">
           <h1 className={Styles.head}>Log in</h1>
           <input className={Styles.inp1} type='email' placeholder='Enter Your Email' onChange={handleEmail} />
@@ -46,7 +48,7 @@ const[users,setUsers]=useState([])
           <Link to={"/register"} className={Styles.register}>Don't have an account?{"Register"}  </Link>
           
           </form>
-          
+          </div>
         </div>
  
   )
