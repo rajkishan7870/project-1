@@ -11,6 +11,7 @@ const Team = () => {
  return (
 <>
 <div className={Styles.mainsContainer}>
+    <div className={Styles.midContainer}>
 <div className={Styles.container}>
 <h1 className={Styles.head1}>Meet Our Team Member's </h1>
 <p className={Styles.para}>Whether you are a workout newbie or a fitness pro, our coaches lead team and one-on-one workouts <br />
@@ -142,6 +143,7 @@ const Team = () => {
                     </div>
                     </Carousel.Item>
                     </Carousel>
+                 </div>
                  </div>
                  </div>
                </>
