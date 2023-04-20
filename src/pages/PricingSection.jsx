@@ -2,16 +2,23 @@ import React from 'react'
 import Styles from './PricingSection.module.css'
 import Navbar from '../components/Navbar'
 
+
 function PricingSection() {
+
+	const show = () => {
+		alert("You will be Navigating to the UPI/Card payment link")
+	}
+
 	return (
 
 		<div >
 			<Navbar />
+
 			<div className={Styles.large}>
 
 				<h1 className={Styles.heading}>CHOOSE OUR PLANS</h1>
 				<div className={Styles.main}>
-					<div className={Styles.pass}>
+					<div className={Styles.Free}>
 						<h4>Free Pass</h4>
 						<h1 className={Styles.dollers}>$0</h1>
 						<h5>/Pass</h5>
@@ -31,7 +38,7 @@ function PricingSection() {
 							<li>1 Day Pass</li>
 							<li>Free Gym Access</li>
 							<li>24 Hours Access</li>
-							<button className={Styles.button1}>GET STARTED</button>
+							<button onClick={show} className={Styles.button2}>GET STARTED</button>
 						</ul>
 					</div>
 					<div className={Styles.monthly}>
@@ -44,7 +51,7 @@ function PricingSection() {
 							<li>Free Gym Access</li>
 							<li>1 Group Class Included</li>
 							<li>24 Hours Access</li>
-							<button className={Styles.button2}>GET STARTED</button>
+							<button onClick={show} className={Styles.button3}>GET STARTED</button>
 						</ul>
 
 					</div>
@@ -59,7 +66,7 @@ function PricingSection() {
 							<li>1 Group Class Included</li>
 							<li>24 Hours Access</li>
 							<li>Any Time Support</li>
-							<button className={Styles.button1}>GET STARTED</button>
+							<button onClick={show} className={Styles.button4}>GET STARTED</button>
 						</ul>
 					</div>
 

@@ -7,6 +7,10 @@ import Styles from './AboutPage.module.css'
 
 
 export default function AboutPage() {
+
+  const shoot = () => {
+      alert("clicked from about us section!")
+  }
   return (
     <div>
       <Container>
@@ -36,20 +40,20 @@ export default function AboutPage() {
             Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
             Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
             Sed non</p>
-            <button className={Styles.button3}>Learn more</button>
+            <button onClick={shoot}className={Styles.button3}>Learn more</button>
             </div>
         </div>
         <br/>
         <br/>
         <br/>
-        <h2 className={Styles.subheading}>Our Facilities</h2>
+        <h2 className={Styles.subheading}>Elite Coches</h2>
         <br/>
         <div className={Styles.About}>
           <div>
           <p>
-          Instead of being just another gym equipment retailer, our founders wanted to be the best in the industry and set their minds to doing so! Over the last two decades Gym and Fitness has grown into one of Australia’s largest online fitness equipment retailers, helping thousands of customers live longer, happier and healthier lives.
+          Our coaches are elite athletes who have dedicated their lives to fitness. They must pass a rigorous, science-backed certification process designed exclusively for our GYM. you Must visit our GYM and our Trainers are realy good. They do very hard work.
           </p>
-          <button className={Styles.button3}>Learn more</button>
+          <button onClick={shoot} className={Styles.button3}>Learn more</button>
           </div>
 
           <div className='ratio-16x9'>
