@@ -58,19 +58,19 @@ export default function LoginPage() {
               <form  onSubmit={handleSubmit}>
                 <span>
                   <label>UserName : </label>
-                  <input ref={userNameRef} type='text' placeholder='username'/>
+                  <input ref={userNameRef} type='text' placeholder='username' required/>
                 </span>
 
                 <span>
                   <label>Password : </label>
-                  <input ref={passwordRef} type='password' placeholder='password' />
+                  <input ref={passwordRef} type='password' placeholder='password' required/>
                 </span>
 
-                <Button type="submit" data={"Sign In"} />
+                <Button className = {styles.signInBtn} type="submit" data={"Sign In"} />
               </form>
             </div>
             <div>
-              <span>Don't Have an account ?? <Button onClick={handleSignUp} data = {"Sign Up"}/></span>
+              <span>Don't Have an account ?? <Button className={styles.signUpBtn} onClick={handleSignUp} data = {"Sign Up"}/></span>
             </div>
 
         </div>

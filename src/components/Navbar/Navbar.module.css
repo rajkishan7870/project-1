@@ -24,6 +24,7 @@
     left:50%;
     transform: translate(-50%);
     z-index: 9999;
+    background: rgba(0,0,0,0.6);
 }
 
 
@@ -31,10 +32,12 @@
     color: #222;
     font-size: 2rem;
     cursor: pointer;
+    text-decoration: none;
+    color: #fff;
 
 }
 
-.parentList{
+#parentList{
 display: grid;
 grid-template-columns: repeat(4, auto);
 grid-gap: 50px;
@@ -42,14 +45,19 @@ list-style: none;
 align-items:center ;
 
 }
-.listItems{
-    display: flex;
-
-    font-size: 20px;
+.listItems a{
+    text-decoration: none;
+    font-size: 1.3rem;
     font-weight: 600;
+    color: #fff;
+    transition: 0.3s ease-in-out;
 
 
 }
+
+.listItems a:hover{
+    color: #13e3a4;
+ }
 
 .navButton{
     padding: 0.5rem 1rem;
@@ -70,19 +78,29 @@ align-items:center ;
     display: none;
 }
 
+
+#mobile i{
+    color: #fff;
+    align-items: center;
+}
+
+#mobile{
+    display: none;
+}
+
 @media screen and ( max-width: 850px){
     .ParentDiv{
         z-index: 99;
     }
 
-    .parentList{
+    #parentList{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         background: white;
         width: 100%;
         height: auto;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: -100%;
         opacity: 0;
@@ -93,11 +111,28 @@ align-items:center ;
     }
 
     .parentList.active{
+        z-index: -1; 
 
-        left: 0;
-        opacity: 1;
+      
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 90px;
+        right: 0;
+        width: 300px;
+        height: 100vh;
+        background: #2a3239;
+        color: #01959a;
+        box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+        padding: 40px;
         z-index: -1;
+        transition: all .5s;
     }
+    #parentList.active{
+        right: -300px;
+       }
 
 
          .navButton{
@@ -126,6 +161,14 @@ align-items:center ;
            font-weight: 700;
            letter-spacing: 2px;
          }
+
+         #mobile{
+            display: block;
+            }
+            #mobile i{
+                font-size: 24px;
+                cursor: pointer;
+            }
 
 }
 
