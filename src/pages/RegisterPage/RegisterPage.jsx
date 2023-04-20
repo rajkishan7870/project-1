@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import Button from "../../components/button/button";
 import { getUsers } from "../../utils/localStorage";
 import styles from "./RegisterPage.module.css";
@@ -10,6 +10,7 @@ export default function RegisterPage() {
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const passwordRef = useRef();
+  const [error,setError] = useState("")
 
   const nav = useNavigate();
 
@@ -19,6 +20,36 @@ export default function RegisterPage() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    var emailRegex =/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/;
+    if(!emailRegex.test(emailRef.current.value)){
+
+      setError('Please enter correct Email');
+      return;
+    }
+    else if(emailRegex.test(emailRef.current.value)){
+      setError("")
+    }
+
+    var usernameRegex = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
+    if(!usernameRegex.test(userNameRef.current.value)){
+      setError('Please enter correct username');
+      return;
+    }
+    else if(usernameRegex.test(userNameRef.current.value)){
+      setError("")
+    }
+
+    var passwordRegex=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,20}$/;
+
+    if(!passwordRegex.test(passwordRef.current.value)){
+      setError('Please Enter valid password');
+      return;
+    }
+    else if(passwordRegex.test(passwordRef.current.value)){
+      setError("")
+    }
+
+
     const users = getUsers();
     users.push({
       email: emailRef.current.value,
@@ -42,26 +73,27 @@ export default function RegisterPage() {
           <form onSubmit={handleSubmit}>
             <span>
               <label>Email : </label>
-              <input ref={emailRef} type="email" placeholder="Enter Email" />
+              <input ref={emailRef} type="email" placeholder="Enter Email" required />
             </span>
 
             <span>
               <label>Username : </label>
-              <input ref={userNameRef} type="text" placeholder="username" />
+              <input ref={userNameRef} type="text" placeholder="username" required/>
             </span>
             <span>
               <label>First Name : </label>
-              <input ref={firstNameRef} type="text" placeholder="First Name" />
+              <input ref={firstNameRef} type="text" placeholder="First Name" required/>
             </span>
 
             <span>
               <label>Last Name : </label>
-              <input ref={lastNameRef} type="text" placeholder="Last Name" />
+              <input ref={lastNameRef} type="text" placeholder="Last Name" required/>
             </span>
             <span>
               <label>Password : </label>
-              <input ref={passwordRef} type="password" placeholder="password" />
+              <input ref={passwordRef} type="password" placeholder="password" required/>
             </span>
+            {error && <p style={{ fontSize: '12px', color: 'red' }}>{error}</p>}
             <Button
               className={styles.signUpBtn}
               type="submit"
@@ -69,10 +101,10 @@ export default function RegisterPage() {
             />
           </form>
 
-          <div>
-            <span>
+          <div className={styles.signIn}>
+            <span >
               Already Registered ??{" "}
-              <Button onClick={handleLogin} data={"Login"} />
+              <Button className={styles.signInBtn} onClick={handleLogin} data={"Login"} />
             </span>
           </div>
         </div>

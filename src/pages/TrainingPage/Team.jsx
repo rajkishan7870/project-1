@@ -1,19 +1,13 @@
 import React from 'react'
 import Styles from'./Team.module.css'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import { Navigation, Pagination, Scrollbar } from 'swiper';
+import Carousel from 'better-react-carousel'
 const Team = () => {
-
-
     const data=[{name: "Squat "}, {name:"Chest Press"}, {name: "Deadlift"}, {name:"Leg Press"} , {name:"Overhead Press"} , {name:"Biceps Arm Curl "}]
     const yogas=[{name: "Padmasana "}, {name:"Simhasan"}, {name: "Bhujangasana"}, {name:"The Butterfly"} , {name:"Kapalbhati pranayama"} , {name:"Anulom vilom pranayama "}]
     const zumbas=[{name: "Zumba Step "}, {name:"Zumba Toning"}, {name: "Zumba in the Circuit"}, {name:"Zumba Sentao"} , {name:"Zumba Kids"} , {name:"Zumba Kids Junior"}]
     const flexible=[{name: "Forward Lunges "}, {name:"Side Lunges"}, {name: "Cross-Over"}, {name:"Standing Quad Stretch."} , {name:"Seat Straddle Lotus"} , {name:"Seat Side Straddle"}]
     const strength=[{name: "Agile Strength "}, {name:"Endurance Strength"}, {name: " Explosive Strength"}, {name:"Maximum Strength."} , {name:"Speed Strength"} , {name:"Starting Strength"}] 
+ 
  return (
 <>
 <div className={Styles.mainsContainer}>
@@ -25,19 +19,8 @@ const Team = () => {
     </div>
 
 <div className={Styles.slidecontainer}>
-<Swiper
- modules={[Navigation, Pagination, Scrollbar]}
- spaceBetween={5}
- slidesPerView={3}
- navigation
- pagination={{ clickable: true }}
- scrollbar={{ draggable: true }}
- onSwiper={(swiper) => console.log(swiper)}
- onSlideChange={() => console.log('slide change')}
- className={Styles.swipers}
-    >
-
-<SwiperSlide> 
+<Carousel cols={3} rows={1} gap={10} loop className={Styles.swipers}>
+<Carousel.Item> 
                     <div className={Styles.box}>
                     <div className={Styles.card}>
                         <div className={Styles.imagecontent}>
@@ -56,8 +39,8 @@ const Team = () => {
                         </div>
                     </div>
                     </div>
-                    </SwiperSlide>
-                    <SwiperSlide> 
+                    </Carousel.Item>
+                    <Carousel.Item> 
                     <div className={Styles.box}>
                     <div className={Styles.card}>
                         <div className={Styles.imagecontent}>
@@ -76,8 +59,8 @@ const Team = () => {
                         </div>
                     </div>
                     </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
+                    </Carousel.Item>
+                    <Carousel.Item>
                     <div className={Styles.box}>
                     <div className={Styles.card}>
                         <div className={Styles.imagecontent}>
@@ -93,12 +76,11 @@ const Team = () => {
                                 zumbas.map((zumb)=>{
                                     return(<li className={Styles.lis}>{zumb.name}</li>)})
                                 }</ul>
-
                         </div>
                     </div>
                     </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
+                    </Carousel.Item>
+                    <Carousel.Item>
                     <div className={Styles.box}>
                     <div className={Styles.card}>
                         <div className={Styles.imagecontent}>
@@ -117,8 +99,8 @@ const Team = () => {
                         </div>
                     </div>
                     </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
+                    </Carousel.Item>
+                    <Carousel.Item>
                     <div className={Styles.box}>
                     <div className={Styles.card}>
                         <div className={Styles.imagecontent}>
@@ -134,18 +116,35 @@ const Team = () => {
                                 strength.map((stren)=>{
                                     return(<li className={Styles.lis}>{stren.name}</li>)})
                                 }</ul>
+                        </div>
+                    </div>
+                    </div>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                    <div className={Styles.box}>
+                    <div className={Styles.card}>
+                        <div className={Styles.imagecontent}>
+                            <div className={Styles.firstchange}>
+                                <img className={Styles.first} src='https://media.istockphoto.com/id/521374546/photo/personal-trainer-helping-men-working-out-in-weights-room-at.jpg?s=612x612&w=0&k=20&c=68OMrdkyL9ws3Dvl-GAQdk8L152L5Y0U_AP5GaZTShU=' alt='' />
+                            </div>
+                        </div>
+                        <div className={Styles.cardcontent}>
+                            <h2 className={Styles.name}>Name:Smith</h2>
+                            <p className={Styles.description}>Circuit Trainer </p>
+                            <p className={Styles.experience}>5 Year of experience as a Circuit Trainer</p>
+                            <ul>{
+                                strength.map((stren)=>{
+                                    return(<li className={Styles.lis}>{stren.name}</li>)})
+                                }</ul>
 
                         </div>
                     </div>
                     </div>
-                    </SwiperSlide>
-                    </Swiper>
+                    </Carousel.Item>
+                    </Carousel>
                  </div>
-
-
                  </div>
                </>
   )
 }
-
-export default Team
+export default Team;
