@@ -1,7 +1,14 @@
-import React from 'react'
+import React  from 'react'
 import Styles from './ImgContainer.module.css'
+import { useNavigate } from 'react-router-dom';
 
 function ImgContainer() {
+
+    const nav = useNavigate();
+
+    function handleCheckPlan(){
+        nav('/pricing')
+    }
 
  return (
 
@@ -16,7 +23,7 @@ function ImgContainer() {
             <h1> chose your  Best Plan</h1>
             <p>Success is not final, failure is not fatal: It is the courage to continue that counts.</p>
 
-            <button className={Styles.button} >check plans</button>
+            <button onClick={handleCheckPlan} className={Styles.button} >check plans</button>
         </div>
 
     </div>

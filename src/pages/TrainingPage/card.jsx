@@ -9,7 +9,7 @@ export default function Card() {
 
       <h1 className={Styles.heading}>Training Programs</h1>
 
-      <Carousel cols={2} rows={1} gap={12} loop  className={Styles.swiper_container}>
+      <Carousel cols={2} rows={1} gap={5} loop  className={Styles.swiper_container}>
 
 
         <Carousel.Item>
