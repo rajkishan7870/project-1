@@ -1,17 +1,39 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Styles from './PricingSection.module.css'
+import { useNavigate } from 'react-router-dom'
+import { getUsers } from '../../utils/localStorage'
 
 
 
 function PricingSection() {
 
-	const show = () => {
-		alert("You will be Navigating to the UPI/Card payment link")
-	}
+    const [purchaded,setPurchased] = useState(false)
+    const nav = useNavigate();
+
+    function handleGetStarted0(){
+        setPurchased(true);
+        nav("/pricingafter")
+        
+    }
+
+    function handleOneDay(){
+        setPurchased(true);
+        nav("/pricingafter")
+    }
+
+    function handleMonth(){
+        setPurchased(true);
+        nav("/pricingafter")
+    }
+
+    function handleYear(){
+        setPurchased(true);
+        nav("/pricingafter")
+    }
 
 	return (
 
-		<div >
+		<div id='Pricing'>
 
 			<div className={Styles.large}>
 
@@ -26,7 +48,7 @@ function PricingSection() {
                     <li>Free Gym Access</li>
                     <li>24 Hours Access</li>
                     <li>Free Trial</li>
-                    <button className={Styles.button1}>SignUp/Login</button>
+                    <button onClick={handleGetStarted0} className={Styles.button1}>GET STARTED</button>
                 </ul>
             </div>
             <div className={Styles.pass}>
@@ -37,7 +59,7 @@ function PricingSection() {
                     <li>1 Day Pass</li>
                     <li>Free Gym Access</li>
                     <li>24 Hours Access</li>
-                    <button onClick={show} className={Styles.button2}>GET STARTED</button>
+                    <button onClick={handleOneDay} className={Styles.button2}>GET STARTED</button>
                     </ul>
                 </div>
                 <div className={Styles.monthly}>
@@ -50,7 +72,7 @@ function PricingSection() {
                         <li>Free Gym Access</li>
                         <li>1 Group Class Included</li>
                         <li>24 Hours Access</li>
-                        <button onClick={show} className={Styles.button3}>GET STARTED</button>
+                        <button onClick={handleMonth} className={Styles.button3}>GET STARTED</button>
 						</ul>
 
 					</div>
@@ -65,7 +87,7 @@ function PricingSection() {
 							<li>1 Group Class Included</li>
 							<li>24 Hours Access</li>
 							<li>Any Time Support</li>
-                            <button onClick={show} className={Styles.button4}>GET STARTED</button>
+                            <button onClick={handleYear} className={Styles.button4}>GET STARTED</button>
                             </ul>
                         </div>
     

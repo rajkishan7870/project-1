@@ -16,3 +16,9 @@
 .hr{
     color: aliceblue;
 }
+
+.anchor{
+    display: flex;
+   gap: 50px;
+   margin-left: 30%;
+}

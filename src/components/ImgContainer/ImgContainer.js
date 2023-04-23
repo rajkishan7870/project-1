@@ -7,7 +7,7 @@ function ImgContainer() {
     const nav = useNavigate();
 
     function handleCheckPlan(){
-        nav('/pricing')
+        nav('#Pricing')
     }
 
  return (

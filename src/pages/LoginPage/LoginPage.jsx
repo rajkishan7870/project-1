@@ -33,8 +33,14 @@ export default function LoginPage() {
      const userObj = userList.find((obj)=> obj?.username === userNameRef.current.value && obj?.password === passwordRef.current.value)
       
     if(userObj !== undefined){
-      alert(`${userObj?.username} you are succ login`)
-      nav('/')
+      alert(`${userObj?.username} you are succ login`);
+      if(userList.find((obj)=> obj?.purchased===true && obj?.username === userNameRef.current.value)){
+          nav("/")
+      }
+      else{
+        nav("/pricing")
+      
+      }
     }else{
       alert("please register first")
     }

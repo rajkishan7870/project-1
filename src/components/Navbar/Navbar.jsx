@@ -26,19 +26,27 @@ export default function Navbar() {
     navigate("/register");
   }
 
+  function handleLogo(){
+    navigate("/")
+  }
+
+
+
   return (
     <div className={Styles.ParentDiv}>
-      <h1 className={Styles.navbarLogo}>GYM</h1>
+      <h1 onClick={handleLogo} className={Styles.navbarLogo}>GYM</h1>
 
       <div>
       <ul id={Styles.parentList} className={mediaNav} onClick={handelClick} >
-          {nav.map((element) => {
-            return (
-              <li className={Styles.listItems}>
-                <Link to={element.navpath}>{element.navName}</Link>
-              </li>
-            );
-          })}
+          
+              <div className={Styles.listItems}>
+                <a href="#About">About Us</a>
+                <a href="#Training">Training</a>
+                <a href="#Pricing">Pricing</a>
+              </div>
+            
+          
+          
         </ul>
       </div>
 

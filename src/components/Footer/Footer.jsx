@@ -8,13 +8,15 @@ export default function Footer() {
   return (
     <div className={styles.parentDiv}>
         <div className={styles.divCont}>
-        <div>
+        <div className={styles.content}>
             <h1>GYM</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, quidem.</p>
-                <InstagramIcon/>
-                <FacebookIcon/>
-                <TwitterIcon/>
 
+            <div className={styles.anchor}>
+                <a href='https://www.instagram.com/'><InstagramIcon/></a>
+                <a href='https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjgyMjcxNzEwLCJjYWxsc2l0ZV9pZCI6MjY5NTQ4NDUzMDcyMDk1MX0%3D'><FacebookIcon/></a>
+                <a href='https://twitter.com/i/flow/login'><TwitterIcon/></a>
+                </div>
         </div>
 
         <div>

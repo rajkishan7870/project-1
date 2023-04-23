@@ -11,7 +11,7 @@ export default function AboutPage() {
       alert("clicked from about us section!")
   }
   return (
-    <div>
+    <div id='About'>
       <Container>
       
         <h1 className={Styles.heading}>About Us</h1>

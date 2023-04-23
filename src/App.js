@@ -8,6 +8,7 @@ import RegisterPage from './pages/RegisterPage/RegisterPage';
 import Navbar from './components/Navbar/Navbar';
 import AboutPage from './pages/AboutPage/AboutPage';
 import PricingSection from './pages/PricingSection/PricingSection';
+import PricingAfter from './pages/PricingSection/PricingAfter';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path = '/login' element ={<LoginPage/>} />
         <Route path = '/register' element ={<RegisterPage/>} />
         <Route path = '/pricing' element ={<PricingSection/>} />
+        <Route path = '/pricingafter' element ={<PricingAfter/>}/>
       </Routes>
     </div>
   );

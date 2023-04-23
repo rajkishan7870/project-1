@@ -1,49 +1,6 @@
-.slidecontainer{
-    width:50rem;
-    margin-left: 2rem;
-        border: 2px solid blue;
-        display: flex;
-        overflow-x:hidden;
-        overflow-y:hidden;
-        border-radius: 40px;
-        background-color: black;
-}
-
-.slidecontainer{
-    width: 78rem;
-     height:37rem;
-     /* line-height:110px; */
-     text-align: center;
-     background-color:hwb(136 2% 14% / 0.939);
-     text-align: center;
-     justify-content: center;
-     margin-top: 35px;
-     margin-right: 2rem;
-     margin-bottom: 10rem;
-     margin-left: 1rem;
- 
- }
-
- .imagecontent,.card-content{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding: 10px 14px;
-}
-.card{
-    border-radius: 25px;
-    background-color: rgb(174, 250, 241);
-}
-.firstchange{
-    position: relative;
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    padding: 3PX;
-}
-.firstchange .first{
-    height: 130%;
-    width:130%;
+.first{
+    height: 60%;
+    width:80%;
     object-fit: cover;
     border-radius: 10%;
     border: 4px solid red;
@@ -73,21 +30,22 @@
     margin-bottom: 0.5rem;
     margin-top: 0.6rem;
   }
-  .container{
+   .container{
       justify-content:center;
       text-align: center;
       margin-right: 5rem;
     margin-top: 19rem;
     margin-left: 30rem;
 
-}
+} 
 .mainsContainer{
-    width: 100%;
-    height :64rem;
+    position: relative;
+    border-radius: 4px solid black;
+    box-sizing: border-box;
+    width: 98%;
+    height :70%;
     border: 1px solid black;
-    margin-top: -23.5rem;
-    
-      
+    margin: 5% 1%;
       justify-content: center;
       text-align: center;
       background-color: greenyellow;
@@ -105,13 +63,7 @@
     font-size: 1.5rem;
     margin-left: -27rem;
 }
-.box{
-    margin-left: 1rem;
-}
-.swipers{
-    margin-left: 2rem;
-   margin-bottom: 3rem;
-}
+
 .lis{
     list-style-type: circle;
     justify-content: left;
@@ -127,6 +79,94 @@ text-align: center;
 justify-content: center;
 margin-left: -1.5rem;
 }
-.midContainer{
-    margin-left: 8rem;
+
+@media screen and (min-width:300px) and (max-width: 750px){
+    .first{
+        height: 100%;
+        width:80%;
+        object-fit: cover;
+        border-radius: 10%;
+        border: 4px solid red;
+        margin-left:1.4rem;
+    }
+    .name{
+        font-size: 20px;
+        font-weight: 400px;
+        color: black;
+        text-align: center;
+        margin-top:1rem;
+        margin-bottom: 3px;
+        margin-left: 1rem;
+    }
+    .lis{
+        
+            list-style-type: circle;
+            justify-content: left;
+            text-align: left;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-left: 4rem;
+        
+        
+    }
+    .description{
+        margin-left: 2rem;
+        margin-top: 1rem;
+        font-size: 1rem;
+        color: black;
+        text-align: center;
+        margin-bottom: 6px;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+    .experience{
+        margin-left: 2rem;
+        font-size: 1rem;
+        color: blue;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        margin-top: 0.6rem;
+      }
+      .container{
+        justify-content:center;
+        text-align:left;
+        margin-right: 5rem;
+      margin-top: 19rem;
+      margin-left: 30rem;
+  
+  } 
+  .head1{
+    /* margin-top: -15rem; */
+    /* margin-: 1rem; */
+    margin-bottom: 7rem;
+    font-size: 2rem;
+    text-decoration: underline;
+     text-align:center;
+    justify-content: center; 
+    margin-left: -37rem;
+    
+
+}
+.para{
+    margin-top: -4rem;
+    font-size: 1rem;
+    margin-right: -37rem;
+    text-align: center;
+    justify-content: center;
+    margin-right:10rem ;
+}
+.mainsContainer{
+    /* position: relative; */
+    border-radius: 4px solid black;
+    box-sizing: border-box;
+    width: 100%;
+    height :56rem;
+    border: 1px solid black;
+   
+    
+      /* margin-left: -.1rem; */
+      justify-content: center;
+      text-align: center;
+      background-color: greenyellow;
+}
 }

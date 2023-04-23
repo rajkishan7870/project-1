@@ -20,6 +20,7 @@ export default function RegisterPage() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    
     var emailRegex =/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/;
     if(!emailRegex.test(emailRef.current.value)){
 
@@ -51,6 +52,13 @@ export default function RegisterPage() {
 
 
     const users = getUsers();
+    console.log(users?.email)
+
+    if(users.find((obj)=>obj?.email === emailRef.current.value)){
+      setError("this Email is Already Registered")
+      return;
+    }
+
     users.push({
       email: emailRef.current.value,
       username: userNameRef.current.value,
@@ -61,6 +69,7 @@ export default function RegisterPage() {
 
     localStorage.setItem("users", JSON.stringify(users));
     event.target.reset();
+    nav("/login")
   }
   return (
     <div>
