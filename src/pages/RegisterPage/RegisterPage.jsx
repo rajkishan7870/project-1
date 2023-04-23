@@ -52,7 +52,7 @@ export default function RegisterPage() {
 
 
     const users = getUsers();
-    console.log(users?.email)
+  
 
     if(users.find((obj)=>obj?.email === emailRef.current.value)){
       setError("this Email is Already Registered")

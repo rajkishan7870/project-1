@@ -10,7 +10,7 @@ export default function Navbar() {
 
   const handelMenubar = () => {
     setIsmenuchange(!ismenuchange);
-    console.log(ismenuchange);
+    
   };
 
   function handleGYM(){
@@ -21,7 +21,7 @@ export default function Navbar() {
       <nav className={style.navbar}>
         <div className={style.logo}>
           
-            <h1 onClick={handleGYM}>GYM</h1>
+          <h1 onClick={handleGYM}>GYM</h1>
        
         </div>
 

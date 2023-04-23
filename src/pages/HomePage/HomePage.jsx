@@ -8,7 +8,7 @@ import styles from './HomePage.module.css'
 
 export default function HomePage() {
   return (
-    <div className={styles.parentDiv}>
+    <div id='Home' className={styles.parentDiv}>
        
        <ImgContainer/> 
 
