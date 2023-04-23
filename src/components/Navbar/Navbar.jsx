@@ -1,63 +1,60 @@
-import React,{useState} from "react";
-import { Link } from "react-router-dom";
+import style from "./Navbar.module.css";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Styles from "./Navbar.module.css";
-import Button from "../button/button";
+import { FaWindowClose } from "react-icons/fa";
+import { BiMenu } from "react-icons/bi";
 
 export default function Navbar() {
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
+  const [ismenuchange, setIsmenuchange] = useState(false);
 
-  const [state, setState]=useState("fas fa-times")
-  const [mediaNav, setMediaNav]=useState("#parentList")
+  const handelMenubar = () => {
+    setIsmenuchange(!ismenuchange);
+    console.log(ismenuchange);
+  };
 
-  const handelClick=()=>{
-      setState( state==="fas fa-bars" ? "fas fa-times":"fas fa-bars" )
-      setMediaNav(mediaNav==="#parentList" ? " #parentList active":"#parentList")
+  function handleGYM(){
+    Navigate("/")
   }
-
-  const nav = [
-    { navName: "Home", navpath: "/" },
-    { navName: "About", navpath: "/about" },
-    { navName: "Pricing", navpath: "/pricing" },
-    { navName: "Training", navpath: "/training"}
-  ];
-
-  function handleJoinUs() {
-    navigate("/register");
-  }
-
-  function handleLogo(){
-    navigate("/")
-  }
-
-
-
   return (
-    <div className={Styles.ParentDiv}>
-      <h1 onClick={handleLogo} className={Styles.navbarLogo}>GYM</h1>
+    <div  className={`${ismenuchange ? style.active : "no"}`}>
+      <nav className={style.navbar}>
+        <div className={style.logo}>
+          
+            <h1 onClick={handleGYM}>GYM</h1>
+       
+        </div>
 
-      <div>
-      <ul id={Styles.parentList} className={mediaNav} onClick={handelClick} >
-          
-              <div className={Styles.listItems}>
-                <a href="#About">About Us</a>
-                <a href="#Training">Training</a>
-                <a href="#Pricing">Pricing</a>
-              </div>
-            
-          
-          
+        <ul className={style.navlist}>
+          <li>
+            <a href="#About">About</a>
+          </li>
+
+          <li>
+            <a href="#Training">Training</a>
+          </li>
+          <li>
+            <a href="#Pricing">Pricing</a>
+          </li>
         </ul>
-      </div>
 
-      <div className={Styles.Button}>
-        <Button onClick={handleJoinUs} className={Styles.navButton} data={"Join Us"}/>
-      </div>
-
-      <div id={Styles.mobile}>
-                <i className={state} onClick={handelClick } name="close-outline" ></i>
-
-            </div>
+        <button
+          onClick={() => {
+            Navigate("/Register");
+          }}
+          className={style.loginBtn}
+        >
+          Join US
+        </button>- 
+        <div className={style.manubar}>
+          <span className={style.menu} onClick={handelMenubar}>
+            <BiMenu />
+          </span>
+          <span className={style.closeIcon} onClick={handelMenubar}>
+            <FaWindowClose />
+          </span>
+        </div>
+      </nav>
     </div>
   );
 }

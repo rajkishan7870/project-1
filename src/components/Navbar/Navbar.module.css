@@ -1,177 +1,145 @@
-.parentList{
-   display: flex; 
-   gap: 50px;
-   width: 50%;
-   height: 50%;
-   justify-content: center;
-   background-color: rgb(206, 171, 171);
-   
-
-}
-
-.ParentDiv{
+.navbar {
     display: flex;
     justify-content: space-between;
+    margin: 0;
     align-items: center;
-    background: white;
-    box-shadow: 0 5px 15px 0 rgba(0,0,0,.25);
-    width: 100%;
-    height: 80px;
-    border-radius: 13px;
+    background-color: rgb(9, 9, 9,0.8);
+    color: white;
+    height: 5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
     position: fixed;
+    width: 100%;
     top: 0;
-    z-index: 1;
-    background: rgba(0,0,0,0.6);
-}
-
-
-.navbarLogo{
-    color: #222;
-    font-size: 2rem;
-    cursor: pointer;
-    text-decoration: none;
-    color: #fff;
-
-}
-
-#parentList{
-display: grid;
-grid-template-columns: repeat(4, auto);
-grid-gap: 50px;
-list-style: none;
-align-items:center ;
-
-}
-
-.listItems{
-    display: flex;
-    gap: 20px;
-}
-.listItems a{
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #fff;
-    
-    transition: 0.3s ease-in-out;
-
-
-}
-
-.listItems a:hover{
-    color: #13e3a4;
- }
-
-.navButton{
-    padding: 0.5rem 1rem;
-    color: red;
-    box-shadow: 0 5px 15px 0 rgba(191, 36, 36, 0.25);
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    border: 2px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-}
-.navButton:hover{
-    background-color: #151516;
-    color: #fff;
-}
-.navButton-mobile{
-    display: none;
-}
-
-
-#mobile i{
-    color: #fff;
     align-items: center;
-}
-
-#mobile{
+    z-index: 1000;
+  }
+  
+  .logImage {
+    height: 3rem;
+    width: 5rem;
+    margin-left: 2rem;
+  }
+  
+  .navlist {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    list-style: none;
+  }
+  
+  .navlist > li > a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* .navlist li:hover::before{
+  content: ;
+  } */
+  
+  .loginBtn {
+    margin-top: 0.4rem;
+    height: 2.5rem;
+    width: 6.3rem;
+    background-color: red;
+    padding: 0.4rem;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-right: 3rem;
+  }
+  
+  .manubar {
     display: none;
-}
+  }
+  .logo{
+    text-decoration: none;
+    font-style: none;
+    color: wheat;
 
-@media screen and ( max-width: 850px){
-    .ParentDiv{
-        z-index: 99;
+  }
+  
+  /* media Queries */
+  
+  @media screen and (min-width:300px) and (max-width: 768px) {
+    .navbar {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      z-index: 10000;
     }
-
-    #parentList{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        background: white;
-        width: 100%;
-        height: auto;
-        position: fixed;
-        top: 0;
-        left: -100%;
-        opacity: 0;
-        align-items: stretch;
-        padding: 80px 0 30px ;
-        z-index: -1;
-
+    .navlist {
+      display: none;
     }
-
-    .parentList.active{
-        z-index: -1; 
-
-      
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        position: fixed;
-        top: 90px;
-        right: 0;
-        width: 300px;
-        height: 100vh;
-        background: #2a3239;
-        color: #01959a;
-        box-shadow: 0 40px 60px rgba(0,0,0,0.1);
-        padding: 40px;
-        z-index: -1;
-        transition: all .5s;
+    .loginBtn {
+      display: none;
     }
-    #parentList.active{
-        right: -300px;
-       }
-
-
-         .navButton{
-            display: block;
-            width: 100%;
-            font-size:1.2rem;
-            padding: 2rem 0;
-         }
-
-         .navButton:hover{
-            background: #01959a;
-            transition: none;
-         }
-
-         .navButton-mobile{
-            display: block;
-            text-align: center;
-            padding: 1.5rem;
-            margin: auto;
-            border-radius: 4px;
-            width: 80%;
-           background: #01959a;
-           text-decoration: none;
-           color: #fff;
-           font-size: 1.2rem;
-           font-weight: 700;
-           letter-spacing: 2px;
-         }
-
-         #mobile{
-            display: block;
-            }
-            #mobile i{
-                font-size: 24px;
-                cursor: pointer;
-            }
-
-}
+  
+    .manubar {
+      display: block;
+    }
+  
+    .closeIcon {
+      display: none;
+    }
+    .menu {
+      font-size: 3rem;
+      margin-right: 2rem;
+    }
+    .logImage {
+      margin-left: 0.4rem;
+    }
+  
+    .active .menu {
+      display: none;
+    }
+    .active .closeIcon {
+      display: block;
+      margin-right: 3rem;
+      font-size: 2.4rem;
+      background-color: transparent;
+    }
+  
+    .active .navlist {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      background-color: rgb(34, 34, 34);
+      position: absolute;
+      top: 3.5rem;
+  
+      text-align: center;
+      right: 0;
+      height: 100vh;
+      box-shadow: 0 40px 60px;
+      padding: 40px 10px 0 0;
+    }
+    .active .navlist li {
+      width: 30px;
+      margin: auto;
+      text-align: center;
+      margin-bottom: -10px;
+      padding-left: 40px;
+      margin-top: 0;
+      margin-right: 10rem;
+      font-size: 1.2rem;
+    }
+    .navlist li a:hover {
+      color: wheat;
+      border-bottom: 2px solid white;
+      padding-bottom: 2px;
+    }
+  
+    .active .loginBtn {
+      display: block;
+      z-index: 999;
+      position: absolute;
+      top: 25rem;
+      right: 3.5rem;
+      font-size: 1rem;
+    
+    }
+  }
 
