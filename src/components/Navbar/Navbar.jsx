@@ -7,14 +7,11 @@ import Button from "../button/button";
 export default function Navbar() {
   const navigate = useNavigate();
 
-  const [state, setState]=useState("fas fa-times")
-  const [mediaNav, setMediaNav]=useState("#parentList")
-
-  const handelClick=()=>{
-      setState( state==="fas fa-bars" ? "fas fa-times":"fas fa-bars" )
-      setMediaNav(mediaNav==="#parentList" ? " #parentList active":"#parentList")
-  }
-
+  const [bar,setBar]=useState("fas fa-bars")
+  const [clas,setClas]=useState("parentList")
+   const handelBar=()=>{
+    setBar(bar=="fas fa-bars"? "fas fa-times" : " fas fa-bars")
+   }
   const nav = [
     { navName: "Home", navpath: "/" },
     { navName: "About", navpath: "/about" },
@@ -25,13 +22,14 @@ export default function Navbar() {
   function handleJoinUs() {
     navigate("/register");
   }
+  
 
   return (
     <div className={Styles.ParentDiv}>
       <h1 className={Styles.navbarLogo}>GYM</h1>
 
-      <div>
-      <ul id={Styles.parentList} className={mediaNav} onClick={handelClick} >
+      <div>  
+      <ul className={`${bar=="fas fa-bars" ? Styles.parentList : Styles.parent}`}  >
           {nav.map((element) => {
             return (
               <li className={Styles.listItems}>
@@ -41,15 +39,15 @@ export default function Navbar() {
           })}
         </ul>
       </div>
-
+      <div id={Styles.mobile}>
+    <i className={bar} onClick={handelBar} id="bar"></i>
+    </div>
       <div className={Styles.Button}>
         <Button onClick={handleJoinUs} className={Styles.navButton} data={"Join Us"}/>
       </div>
+    
 
-      <div id={Styles.mobile}>
-                <i className={state} onClick={handelClick } name="close-outline" ></i>
-
-            </div>
+     
     </div>
   );
 }
