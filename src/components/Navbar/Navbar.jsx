@@ -1,53 +1,59 @@
-import React,{useState} from "react";
-import { Link } from "react-router-dom";
+import style from "./Navbar.module.css";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Styles from "./Navbar.module.css";
-import Button from "../button/button";
+import { FaWindowClose } from "react-icons/fa";
+import { BiMenu } from "react-icons/bi";
 
 export default function Navbar() {
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
+  const [ismenuchange, setIsmenuchange] = useState(false);
 
-  const [bar,setBar]=useState("fas fa-bars")
-  const [clas,setClas]=useState("parentList")
-   const handelBar=()=>{
-    setBar(bar=="fas fa-bars"? "fas fa-times" : " fas fa-bars")
-   }
-  const nav = [
-    { navName: "Home", navpath: "/" },
-    { navName: "About", navpath: "/about" },
-    { navName: "Pricing", navpath: "/pricing" },
-    { navName: "Training", navpath: "/training"}
-  ];
-
-  function handleJoinUs() {
-    navigate("/register");
-  }
-  
-
+  const handelMenubar = () => {
+    setIsmenuchange(!ismenuchange);
+    console.log(ismenuchange);
+  };
   return (
-    <div className={Styles.ParentDiv}>
-      <h1 className={Styles.navbarLogo}>GYM</h1>
+    <div  className={`${ismenuchange ? style.active : "no"}`}>
+      <nav className={style.navbar}>
+        <div className={style.logo}>
+          <a href="#home">
+            <h1>GYM</h1>
+          </a>
+        </div>
 
-      <div>  
-      <ul className={`${bar=="fas fa-bars" ? Styles.parentList : Styles.parent}`}  >
-          {nav.map((element) => {
-            return (
-              <li className={Styles.listItems}>
-                <Link to={element.navpath}>{element.navName}</Link>
-              </li>
-            );
-          })}
+        <ul className={style.navlist}>
+          <li>
+            <a href="#about">About</a>
+          </li>
+
+          <li>
+            <a href="#Program">Program</a>
+          </li>
+          <li>
+            <a href="#Trainer">Trainer</a>
+          </li>
+          <li>
+            <a href="#pricing">Pricing</a>
+          </li>
         </ul>
-      </div>
-      <div id={Styles.mobile}>
-    <i className={bar} onClick={handelBar} id="bar"></i>
-    </div>
-      <div className={Styles.Button}>
-        <Button onClick={handleJoinUs} className={Styles.navButton} data={"Join Us"}/>
-      </div>
-    
 
-     
+        <button
+          onClick={() => {
+            Navigate("/Register");
+          }}
+          className={style.loginBtn}
+        >
+          Join US
+        </button>- 
+        <div className={style.manubar}>
+          <span className={style.menu} onClick={handelMenubar}>
+            <BiMenu />
+          </span>
+          <span className={style.closeIcon} onClick={handelMenubar}>
+            <FaWindowClose />
+          </span>
+        </div>
+      </nav>
     </div>
   );
 }
