@@ -41,7 +41,8 @@ export default function RegisterPage() {
 
     var passwordRegex=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,20}$/;
 
-    if(!passwordRegex.test(passwordRef.current.value)){
+    if(
+      !passwordRegex.test(passwordRef.current.value)){
       setError('Please Enter valid password');
       return;
     }
