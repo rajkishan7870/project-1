@@ -63,14 +63,8 @@ export default function Card() {
     <  div >
         <h1 className={Styles.head1}>Circuit Training</h1>
          <img className={Styles.pict} src= "https://media.istockphoto.com/id/1067774764/photo/it-all-starts-with-determination.jpg?s=612x612&w=0&k=20&c=HQP48vtJZx7YC_0bx1POY52B4M--Hv5-rpM8IZF_Esk="  alt="dummy"/> 
-         
-    </div>
-    
-    
-   
-        </Carousel>
-   
-      {/* <img className={Styles.backimage} src='https://media.istockphoto.com/id/865428362/photo/fitness-center-background.jpg?s=612x612&w=0&k=20&c=wByuD_AJUOSQl3W7MCikZrQ1s0r13SEOlwSnZbG8bhE=' alt='background_image' /> */}
+         </div>
+     </Carousel>
     </div>
   );
 }

@@ -13,10 +13,7 @@ import PricingAfter from './pages/PricingSection/PricingAfter';
 
 function App() {
 
-  // const location = useLocation();
-  // useEffect(()=>{
-  //   window.scrollTo({top:0})
-  // },[location])
+
 
   return (
     <div className="App">

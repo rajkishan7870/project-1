@@ -3,6 +3,8 @@ import Button from '../../components/button/button'
 import { getUsers } from '../../utils/localStorage';
 import styles from './Login.module.css'
 import { useNavigate } from 'react-router-dom';
+import { isUserLogInAtom } from '../Recoil';
+import {useSetRecoilState} from 'recoil'
 
 export default function LoginPage() {
   const userNameRef = useRef();
@@ -15,6 +17,7 @@ export default function LoginPage() {
   
   const nav = useNavigate();
 
+  const user=useSetRecoilState(isUserLogInAtom)
 
   useEffect(()=>{
     const data = getUsers(); 
@@ -33,8 +36,10 @@ export default function LoginPage() {
      const userObj = userList.find((obj)=> obj?.username === userNameRef.current.value && obj?.password === passwordRef.current.value)
       
     if(userObj !== undefined){
+      user(true)
       alert(`${userObj?.username} you are succ login`);
       if(userList.find((obj)=> obj?.purchased===true && obj?.username === userNameRef.current.value)){
+        
           nav("/")
       }
       else{
